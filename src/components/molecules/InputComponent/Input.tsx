@@ -1,12 +1,8 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '../../../styles/theme';
-import {
-  StyledInput,
-  StyledDiv,
-  StyledParagraph,
-  StyledErrorParagraph,
-} from './Input.styled';
+import { StyledInput, StyledDiv, StyledErrorParagraph } from './Input.styled';
+import { Label } from '../../atoms/LabelComponent/Label';
 
 export interface InputProps {
   label?: string;
@@ -34,7 +30,7 @@ export const Input: React.FC<InputProps> = ({
   return (
     <ThemeProvider theme={theme}>
       <StyledDiv>
-        {label && <StyledParagraph>{label}</StyledParagraph>}
+        {label && <Label>{label}</Label>}
         <StyledInput
           data-testid={'input-field'}
           placeholder={placeholder}
