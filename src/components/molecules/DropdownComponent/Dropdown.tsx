@@ -7,8 +7,8 @@ import {
   StyledDropdownButton,
   StyledDropdownContainer,
   StyledDiv,
-  StyledParagraph,
 } from './Dropdown.styled';
+import { Label } from '../../atoms/LabelComponent/Label';
 
 export interface DropdownSelectOptions {
   id: string;
@@ -65,7 +65,7 @@ export const Dropdown: React.FC<DropdownOptions> = ({
   return (
     <ThemeProvider theme={theme}>
       <StyledDiv>
-        {label && <StyledParagraph>{label}</StyledParagraph>}
+        {label && <Label>{label}</Label>}
         <StyledDropdownContainer>
           <StyledDropdownButton
             data-testid={`dropdown-button-${title}`}
