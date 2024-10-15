@@ -18,11 +18,7 @@ describe('Dropdown Component', () => {
 
   it('renders Dropdown component with correct label', () => {
     render(
-      <Dropdown
-        title={testTitle}
-        options={mockedOptions}
-        onClick={mockOnClick}
-      >
+      <Dropdown title={testTitle} options={mockedOptions} onClick={mockOnClick}>
         {testTitle}
       </Dropdown>,
     );
@@ -38,11 +34,7 @@ describe('Dropdown Component', () => {
 
   it('should click option', () => {
     render(
-      <Dropdown
-        title={testTitle}
-        options={mockedOptions}
-        onClick={mockOnClick}
-      >
+      <Dropdown title={testTitle} options={mockedOptions} onClick={mockOnClick}>
         {testTitle}
       </Dropdown>,
     );
