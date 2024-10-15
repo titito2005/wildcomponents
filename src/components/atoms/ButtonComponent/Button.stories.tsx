@@ -17,5 +17,6 @@ export const Primary: Story = {
     filled: true,
     backgroungColor: '600',
     hoverColor: '700',
+    width: '130px',
   },
 };

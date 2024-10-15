@@ -10,6 +10,8 @@ export const StyledButton = styled.button<ButtonProps>`
     backgroungColor = '600',
     hoverColor = '800',
     color = 'white',
+    width = '200px',
+    height,
     theme,
   }) => `
     font-family: Trebuchet MS, sans-serif;
@@ -25,6 +27,8 @@ export const StyledButton = styled.button<ButtonProps>`
     cursor: pointer;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     margin: ${margin};
+    width: ${width};
+    height: ${height};
 
     &:hover {
       background: ${

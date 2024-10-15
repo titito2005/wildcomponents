@@ -14,14 +14,15 @@ describe('Dropdown Component', () => {
     { id: '2', value: 'Option#2' },
   ];
 
+  const testTitle = 'test-dropdown';
+
   it('renders Dropdown component with correct label', () => {
     render(
-      <Dropdown
-        title={'test-dropdown'}
-        options={mockedOptions}
-        onClick={mockOnClick}
-      />,
+      <Dropdown title={testTitle} options={mockedOptions} onClick={mockOnClick}>
+        {testTitle}
+      </Dropdown>,
     );
+    screen.debug(undefined, Infinity);
     const dropDownButton = screen.getByTestId('dropdown-button-test-dropdown');
     expect(dropDownButton).toBeInTheDocument();
     fireEvent.click(dropDownButton);
@@ -33,11 +34,9 @@ describe('Dropdown Component', () => {
 
   it('should click option', () => {
     render(
-      <Dropdown
-        title={'test-dropdown'}
-        options={mockedOptions}
-        onClick={mockOnClick}
-      />,
+      <Dropdown title={testTitle} options={mockedOptions} onClick={mockOnClick}>
+        {testTitle}
+      </Dropdown>,
     );
     const dropDownButton = screen.getByTestId('dropdown-button-test-dropdown');
     fireEvent.click(dropDownButton);
@@ -49,11 +48,13 @@ describe('Dropdown Component', () => {
   it('should render label', () => {
     render(
       <Dropdown
-        title={'test-dropdown'}
+        title={testTitle}
         label={'dropdown-label'}
         options={mockedOptions}
         onClick={mockOnClick}
-      />,
+      >
+        {testTitle}
+      </Dropdown>,
     );
     const dropdownLabel = screen.getByText('dropdown-label');
     expect(dropdownLabel).toBeInTheDocument();
