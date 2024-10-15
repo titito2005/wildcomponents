@@ -1,40 +1,27 @@
 import React, { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
-import { theme, themeColors } from '../../../styles/theme';
+import { theme } from '../../../styles/theme';
 import {
   StyledDropdownItem,
   StyledDropdownContent,
-  StyledDropdownButton,
   StyledDropdownContainer,
   StyledDiv,
 } from './Dropdown.styled';
 import { Label } from '../../atoms/LabelComponent/Label';
+import { Button, ButtonProps } from '../../atoms/ButtonComponent/Button';
 
 export interface DropdownSelectOptions {
   id: string;
   value: string;
 }
 
-export interface DropdownButtonProps {
-  rounded?: boolean;
-  filled?: boolean;
-  padding?: string;
-  margin?: string;
-  backgroungColor?: themeColors;
-  hoverColor?: themeColors;
-  color?: themeColors;
-  width?: string;
-  height?: string;
-}
-
-export interface DropdownOptions extends DropdownButtonProps {
+export interface DropdownOptions extends ButtonProps {
   title?: string;
   label?: string;
   isOpen?: boolean;
   optionsHeight?: string;
   optionsWeight?: string;
   options: DropdownSelectOptions[];
-  onClick: (value: string) => void;
 }
 
 export const Dropdown: React.FC<DropdownOptions> = ({
@@ -67,7 +54,7 @@ export const Dropdown: React.FC<DropdownOptions> = ({
       <StyledDiv>
         {label && <Label>{label}</Label>}
         <StyledDropdownContainer>
-          <StyledDropdownButton
+          <Button
             data-testid={`dropdown-button-${title}`}
             onClick={() => setOpen(!open)}
             rounded={rounded}
@@ -79,7 +66,7 @@ export const Dropdown: React.FC<DropdownOptions> = ({
             color={color}
             width={width}
             height={height}
-          >{`${optionSelected ? optionSelected : title} v`}</StyledDropdownButton>
+          >{`${optionSelected ? optionSelected : title} v`}</Button>
           <StyledDropdownContent showcontent={open}>
             {options.map((option) => (
               <StyledDropdownItem

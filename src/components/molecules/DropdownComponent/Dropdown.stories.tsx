@@ -12,7 +12,7 @@ type Story = StoryObj<typeof Dropdown>;
 
 export const Primary: Story = {
   args: {
-    title: 'Dropdown Example',
+    title: 'DROPDOWN EXAMPLE',
     rounded: false,
     filled: true,
     backgroungColor: '600',

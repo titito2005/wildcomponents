@@ -12,7 +12,9 @@ export interface ButtonProps {
   hoverColor?: themeColors;
   color?: themeColors;
   children: React.ReactNode;
-  onClick?: () => void;
+  width?: string;
+  height?: string;
+  onClick: (value?: string) => void;
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -24,6 +26,8 @@ export const Button: React.FC<ButtonProps> = ({
   hoverColor,
   color,
   children,
+  width,
+  height,
   onClick,
 }) => {
   return (
@@ -37,6 +41,8 @@ export const Button: React.FC<ButtonProps> = ({
         hoverColor={hoverColor}
         color={color}
         onClick={onClick}
+        width={width}
+        height={height}
       >
         {children}
       </StyledButton>
