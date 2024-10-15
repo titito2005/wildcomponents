@@ -4,6 +4,7 @@ import { theme, themeColors } from '../../../styles/theme';
 import { StyledButton } from './Button.styled';
 
 export interface ButtonProps {
+  dataTestId?: string;
   rounded?: boolean;
   filled?: boolean;
   padding?: string;
@@ -18,6 +19,7 @@ export interface ButtonProps {
 }
 
 export const Button: React.FC<ButtonProps> = ({
+  dataTestId,
   rounded,
   filled,
   padding,
@@ -33,6 +35,7 @@ export const Button: React.FC<ButtonProps> = ({
   return (
     <ThemeProvider theme={theme}>
       <StyledButton
+        data-testid={dataTestId}
         rounded={rounded}
         filled={filled}
         padding={padding}

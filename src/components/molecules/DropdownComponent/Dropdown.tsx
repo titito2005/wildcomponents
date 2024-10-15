@@ -55,7 +55,7 @@ export const Dropdown: React.FC<DropdownOptions> = ({
         {label && <Label>{label}</Label>}
         <StyledDropdownContainer>
           <Button
-            data-testid={`dropdown-button-${title}`}
+            dataTestId={`dropdown-button-${title}`}
             onClick={() => setOpen(!open)}
             rounded={rounded}
             filled={filled}
